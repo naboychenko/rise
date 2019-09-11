@@ -9,9 +9,9 @@ data class UserDto (
 
         var email: String?=null,
 
-        var position: String?=null,
+        var position: PositionDto?=null,
 
-        var level: String?=null,
+        var level: LevelDto?=null,
 
         var role: RoleDto?=null
 ) : Dto

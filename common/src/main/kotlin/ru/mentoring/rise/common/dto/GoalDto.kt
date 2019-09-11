@@ -9,7 +9,7 @@ data class GoalDto (
 
         var resource: ResourceDto?=null,
 
-        var status: String?=null,
+        var status: StatusDto?=null,
 
         var feedback: Set<FeedbackDto>?=null
 ) : Dto
