@@ -14,4 +14,4 @@ data class UserDto (
         var level: String?=null,
 
         var role: RoleDto?=null
-)
+) : Dto

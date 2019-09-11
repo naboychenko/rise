@@ -8,4 +8,4 @@ data class ResourceDto (
         var url: String?=null,
 
         var description: String?=null
-)
+) : Dto

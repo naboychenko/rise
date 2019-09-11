@@ -8,4 +8,4 @@ data class RoleDto (
         var isAdmin: Boolean?=null,
 
         var isEditor: Boolean?=null
-)
+) : Dto

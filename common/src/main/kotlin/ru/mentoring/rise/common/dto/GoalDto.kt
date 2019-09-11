@@ -12,4 +12,4 @@ data class GoalDto (
         var status: String?=null,
 
         var feedback: Set<FeedbackDto>?=null
-)
+) : Dto

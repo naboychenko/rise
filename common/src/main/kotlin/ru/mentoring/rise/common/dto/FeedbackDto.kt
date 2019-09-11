@@ -8,4 +8,4 @@ data class FeedbackDto (
         var goal: GoalDto?=null,
 
         var description: String?=null
-)
+) : Dto
