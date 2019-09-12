@@ -10,3 +10,4 @@
 rootProject.name = 'rise'
 
 include 'common'
+include 'feedback-service'

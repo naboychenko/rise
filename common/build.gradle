@@ -18,4 +18,5 @@ dependencies {
 
     testImplementation 'org.jetbrains.kotlin:kotlin-test'
     testImplementation 'org.jetbrains.kotlin:kotlin-test-junit'
+    testCompile 'org.assertj:assertj-core:3.11.1'
 }
