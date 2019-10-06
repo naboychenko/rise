@@ -1,0 +1,34 @@
+eureka:
+  client:
+    service-url:
+      default-zone: http://localhost:8761/eureka/
+
+
+server:
+  port: 8764
+
+spring:
+  application:
+    name: skill-service
+  datasource:
+    database: POSTGRESQL
+    platform: postgres
+    url: jdbc:postgresql://localhost:5432/skillbase
+    username: user
+    password: 12345
+
+  data:
+    mongodb:
+      host: localhost
+      port: 27017
+      database: skills
+
+  jpa:
+    hibernate:
+      ddl-auto: none
+
+    properties:
+      hibernate:
+        jdbc:
+          lob:
+            non_contextual_creation: true
