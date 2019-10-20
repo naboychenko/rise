@@ -1,6 +1,6 @@
 package ru.mentoring.rise.common.dto
 
-import java.util.*
+import java.util.Date
 
 data class SkillDto(
 

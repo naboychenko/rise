@@ -6,7 +6,7 @@ import org.springframework.transaction.annotation.Transactional;
 import ru.mentoring.rise.skills.domain.Skill;
 
 @Transactional(readOnly = true)
-public interface CrudService {
+public interface SkillService {
 
     List<Skill> getAll();
 

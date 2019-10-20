@@ -11,11 +11,11 @@ public interface SkillConverter {
 
     SkillConverter INSTANCE = Mappers.getMapper(SkillConverter.class);
 
-    SkillDto skillToSkillDto(Skill skill);
+    SkillDto toDto(Skill skill);
 
-    Skill skillDtoToSkill(SkillDto skillDto);
+    Skill toEntity(SkillDto skillDto);
 
-    List<SkillDto> skillListToSkillDtoList(List<Skill> skillList);
+    List<SkillDto> toDtoList(List<Skill> skillList);
 
-    List<Skill> skillDtoListToSkillList(List<SkillDto> skillDtoList);
+    List<Skill> toEntityList(List<SkillDto> skillDtoList);
 }

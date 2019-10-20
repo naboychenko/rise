@@ -25,11 +25,11 @@ public class SkillSearchController {
     @GetMapping(FIND_SKILL_BY_NAME)
     public List<SkillDto> findSkillsByName(@PathVariable String name) {
 
-        return converter.skillListToSkillDtoList(searchService.getSkillsByName(name));
+        return converter.toDtoList(searchService.getSkillsByName(name));
     }
 
     @GetMapping(FIND_SKILL_BY_RANK)
     public List<SkillDto> findSkillsByRank(@PathVariable String skillRank) {
-        return converter.skillListToSkillDtoList(searchService.getSkillsByRank(skillRank));
+        return converter.toDtoList(searchService.getSkillsByRank(skillRank));
     }
 }

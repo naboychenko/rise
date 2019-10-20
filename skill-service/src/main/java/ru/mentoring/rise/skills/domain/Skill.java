@@ -24,13 +24,13 @@ import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 @Data
+@Entity
+@Builder
 @NoArgsConstructor
 @AllArgsConstructor
-@Builder
-@Entity
-@EntityListeners(AuditingEntityListener.class)
-@Document(collection = "skills")
 @Table(name = "skills")
+@Document(collection = "skills")
+@EntityListeners(AuditingEntityListener.class)
 public class Skill implements Serializable {
 
     @Id

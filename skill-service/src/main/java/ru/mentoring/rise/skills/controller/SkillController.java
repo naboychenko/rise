@@ -17,37 +17,37 @@ import org.springframework.web.bind.annotation.RestController;
 import ru.mentoring.rise.common.dto.SkillDto;
 import ru.mentoring.rise.skills.converter.SkillConverter;
 import ru.mentoring.rise.skills.domain.Skill;
-import ru.mentoring.rise.skills.service.impl.SkillCrudService;
+import ru.mentoring.rise.skills.service.impl.SkillServiceImpl;
 
 @RestController
 @RequestMapping("/")
 @RequiredArgsConstructor
 public class SkillController {
 
-    private final SkillCrudService crudService;
+    private final SkillServiceImpl crudService;
     private final SkillConverter converter;
 
     @GetMapping(value = "{id}")
     public SkillDto getSkillById(@PathVariable Long id) throws NotFoundException {
-        return converter.skillToSkillDto(crudService.get(id));
+        return converter.toDto(crudService.get(id));
     }
 
     @GetMapping
     public List<SkillDto> getSkills() {
-        return converter.skillListToSkillDtoList(crudService.getAll());
+        return converter.toDtoList(crudService.getAll());
     }
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    public SkillDto addSkill(@RequestBody SkillDto skillDto) {
-        Skill createdSkill = converter.skillDtoToSkill(skillDto);
-        return converter.skillToSkillDto(crudService.save(createdSkill));
+    public SkillDto addSkill(@Valid @RequestBody SkillDto skillDto) {
+        Skill createdSkill = converter.toEntity(skillDto);
+        return converter.toDto(crudService.save(createdSkill));
     }
 
     @PutMapping(value = "{id}")
     public SkillDto updateSkill(@PathVariable Long id, @Valid @RequestBody SkillDto skillDto) throws NotFoundException {
-        Skill updatedSkill = converter.skillDtoToSkill(skillDto);
-        return converter.skillToSkillDto(crudService.update(id, updatedSkill));
+        Skill updatedSkill = converter.toEntity(skillDto);
+        return converter.toDto(crudService.update(id, updatedSkill));
     }
 
     @DeleteMapping(value = "{id}")

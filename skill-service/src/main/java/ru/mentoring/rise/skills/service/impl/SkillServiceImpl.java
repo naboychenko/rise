@@ -11,13 +11,13 @@ import ru.mentoring.rise.skills.exception.NotFoundException;
 import ru.mentoring.rise.skills.exception.NotProcessableEntityException;
 import ru.mentoring.rise.skills.repo.jpa.SkillRepo;
 import ru.mentoring.rise.skills.repo.mongo.MongoSkillRepo;
-import ru.mentoring.rise.skills.service.CrudService;
+import ru.mentoring.rise.skills.service.SkillService;
 
 @Service
 @RequiredArgsConstructor
 @Slf4j
 @Transactional(readOnly = true)
-public class SkillCrudService implements CrudService {
+public class SkillServiceImpl implements SkillService {
 
     private final SkillRepo repo;
     private final MongoSkillRepo mongoSkillRepo;

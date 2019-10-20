@@ -9,7 +9,7 @@ import ru.mentoring.rise.skills.service.SearchService;
 
 @Service
 @RequiredArgsConstructor
-public class SkillSearchService implements SearchService {
+public class SearchServiceImpl implements SearchService {
 
     private final MongoSkillRepo mongoSkillRepo;
 
