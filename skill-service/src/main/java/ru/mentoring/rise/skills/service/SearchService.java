@@ -1,11 +1,12 @@
 package ru.mentoring.rise.skills.service;
 
+import ru.mentoring.rise.common.dto.SkillDto;
+
 import java.util.List;
-import ru.mentoring.rise.skills.domain.Skill;
 
 public interface SearchService {
 
-    List<Skill> getSkillsByName(String name);
+    List<SkillDto> getSkillsByName(String name);
 
-    List<Skill> getSkillsByRank(String rank);
+    List<SkillDto> getSkillsByRank(String rank);
 }

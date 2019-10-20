@@ -22,6 +22,8 @@ spring:
       host: localhost
       port: 27017
       database: skills
+      repositories:
+        type: auto
 
   jpa:
     hibernate:

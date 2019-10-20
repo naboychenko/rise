@@ -1,28 +1,29 @@
 package ru.mentoring.rise.skills.service;
 
-import java.util.List;
 import javassist.NotFoundException;
 import org.springframework.transaction.annotation.Transactional;
-import ru.mentoring.rise.skills.domain.Skill;
+import ru.mentoring.rise.common.dto.SkillDto;
+
+import java.util.List;
 
 @Transactional(readOnly = true)
 public interface SkillService {
 
-    List<Skill> getAll();
+    List<SkillDto> getAll();
 
-    Skill get(Long entityId) throws NotFoundException;
-
-    @Transactional
-    Skill save(Skill entity);
+    SkillDto get(Long entityId) throws NotFoundException;
 
     @Transactional
-    List<Skill> save(List<Skill> entities);
+    SkillDto save(SkillDto entity);
 
     @Transactional
-    Skill update(Long id, Skill note) throws IllegalArgumentException, NotFoundException;
+    List<SkillDto> save(List<SkillDto> entities);
 
     @Transactional
-    Skill delete(Long entityId) throws NotFoundException;
+    SkillDto update(Long id, SkillDto note) throws IllegalArgumentException, NotFoundException;
+
+    @Transactional
+    SkillDto delete(Long entityId) throws NotFoundException;
 
     boolean exists(Long entityId);
 }
