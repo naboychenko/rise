@@ -20,14 +20,14 @@ import ru.mentoring.rise.skills.domain.Skill;
 import ru.mentoring.rise.skills.service.impl.SkillServiceImpl;
 
 @RestController
-@RequestMapping("/")
+@RequestMapping("/skill")
 @RequiredArgsConstructor
 public class SkillController {
 
     private final SkillServiceImpl crudService;
     private final SkillConverter converter;
 
-    @GetMapping(value = "{id}")
+    @GetMapping(value = "/{id}")
     public SkillDto getSkillById(@PathVariable Long id) throws NotFoundException {
         return converter.toDto(crudService.get(id));
     }
@@ -44,13 +44,13 @@ public class SkillController {
         return converter.toDto(crudService.save(createdSkill));
     }
 
-    @PutMapping(value = "{id}")
+    @PutMapping(value = "/{id}")
     public SkillDto updateSkill(@PathVariable Long id, @Valid @RequestBody SkillDto skillDto) throws NotFoundException {
         Skill updatedSkill = converter.toEntity(skillDto);
         return converter.toDto(crudService.update(id, updatedSkill));
     }
 
-    @DeleteMapping(value = "{id}")
+    @DeleteMapping(value = "/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public void deleteSkill(@PathVariable Long id) throws NotFoundException {
         crudService.delete(id);

@@ -15,7 +15,7 @@ import ru.mentoring.rise.skills.service.SearchService;
 @RequiredArgsConstructor
 public class SkillSearchController {
 
-    public static final String SKILLS_SEARCH = "/search";
+    public static final String SKILLS_SEARCH = "/skill/search";
     public static final String FIND_SKILL_BY_NAME = "/{name}";
     public static final String FIND_SKILL_BY_RANK = "/rank/{skillRank}";
 
