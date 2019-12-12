@@ -1,0 +1,9 @@
+spring:
+  cloud:
+    config:
+      server:
+        git:
+          username: configAdmin
+          password: password1
+          clone-on-start: true
+          uri: http://viktoria.naboychenko.fvds.ru:3000/configAdmin/configuration-repository.git

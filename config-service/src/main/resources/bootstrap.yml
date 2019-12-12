@@ -1,0 +1,14 @@
+spring:
+  application:
+    name:  configservice
+  cloud:
+    config:
+      server:
+        encrypt:
+          enabled:  false
+server:
+  port: 8888
+eureka:
+  client:
+    service-url:
+      default-zone: http://localhost:8761/eureka/
